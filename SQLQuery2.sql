@@ -402,3 +402,10 @@ ALTER TABLE [admission]
 ALTER TABLE [admission]
   ADD CONSTRAINT [FK_admission_appointment]
   FOREIGN KEY ([appointmentID]) REFERENCES [appointment] ([id])
+
+--
+
+ALTER TABLE [bed]
+  ADD CONSTRAINT [FK_bed_department]
+  FOREIGN KEY ([departmentID]) REFERENCES [department] ([id])
+
