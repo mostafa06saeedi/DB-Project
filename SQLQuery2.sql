@@ -449,3 +449,38 @@ ALTER TABLE [labalert]
   ADD CONSTRAINT [FK_labalaret_doctor]
   FOREIGN KEY ([doctorID]) REFERENCES [doctor] ([employeeID])
 
+ALTER TABLE [labalert]
+  ADD CONSTRAINT [FK_labalaret_labresult]
+  FOREIGN KEY ([labresultID]) REFERENCES [labresult] ([id])
+
+ALTER TABLE [prescription]
+  ADD CONSTRAINT [FK_prescription_patient]
+  FOREIGN KEY ([patientID]) REFERENCES [patient] ([nationalID])
+
+ALTER TABLE [prescription]
+  ADD CONSTRAINT [FK_prescription_emoployee]
+  FOREIGN KEY ([emoployeeID]) REFERENCES [emoployee] ([id])
+
+ALTER TABLE [prescription]
+  ADD CONSTRAINT [FK_prescription_appointment]
+  FOREIGN KEY ([appointmentID]) REFERENCES [appointment] ([id])
+
+ALTER TABLE [prescription]
+  ADD CONSTRAINT [FK_prescription_addmission]
+  FOREIGN KEY ([addmissionID]) REFERENCES [addmission] ([id])
+
+ALTER TABLE [prescriptionitem]
+  ADD CONSTRAINT [FK_prescriptionitem_prescription]
+  FOREIGN KEY ([prescriptionID]) REFERENCES [prescription] ([id])
+
+ALTER TABLE [prescriptionitem]
+  ADD CONSTRAINT [FK_prescriptionitem_drug]
+  FOREIGN KEY ([drugID]) REFERENCES [drug] ([id])
+
+ALTER TABLE [storage_transaction]
+  ADD CONSTRAINT [FK_storage_transaction_drug]
+  FOREIGN KEY ([drugID]) REFERENCES [drug] ([id])
+
+ALTER TABLE [storage_transaction]
+  ADD CONSTRAINT [FK_storage_transaction_storage]
+  FOREIGN KEY ([storageID]) REFERENCES [storage] ([id])
