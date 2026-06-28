@@ -206,13 +206,12 @@ WHERE TABLE_TYPE = 'BASE TABLE';
 
 ## 👥 Team
 
-| Name | Contribution |
-|------|-------------|
-| [Amir mohammad mofateh] | |
-| [Korosh motazed kivani] | |
-| [Mostafa saidi] | |
+* 👤 [Amir mohammad mofateh](https://github.com/AMiR-Mofateh)
+* 👤 [Korosh motazed kivani](https://github.com/ImKoorosh)
+* 👤 [Mostafa saidi](https://github.com/mostafa06saeedi)
 
 ---
+
 
 <div align="center">
   <sub>Database Design 1 · Final Project · Phase 1</sub>
