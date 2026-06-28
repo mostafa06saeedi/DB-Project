@@ -206,9 +206,9 @@ WHERE TABLE_TYPE = 'BASE TABLE';
 
 ## 👥 Team
 
-* 👤 [Amir mohammad mofateh](https://github.com/AMiR-Mofateh)
-* 👤 [Korosh motazed kivani](https://github.com/ImKoorosh)
-* 👤 [Mostafa saidi](https://github.com/mostafa06saeedi)
+* 👤 [Amir Mohammad Mofateh](https://github.com/AMiR-Mofateh)
+* 👤 [Koorosh Motazed Keyvani](https://github.com/ImKoorosh)
+* 👤 [Mostafa Saeedi](https://github.com/mostafa06saeedi)
 
 ---
 
