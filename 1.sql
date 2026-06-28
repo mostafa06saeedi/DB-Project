@@ -85,10 +85,31 @@ CREATE TABLE [labalert] (
   CONSTRAINT [PK_labalert] PRIMARY KEY ([id])
 )
 
+CREATE TABLE [prescription] (
+  [id]            int           IDENTITY(1,1) NOT NULL,
+  [patientID]     nvarchar(255) NULL,
+  [employeeID]    int           NULL,
+  [appointmentID] int           NULL,
+  [admissionID]   int           NULL,
+  [date]          date          NULL,
+  [status]        nvarchar(255) NULL,
+  CONSTRAINT [PK_prescription] PRIMARY KEY ([id])
+)
+
 CREATE TABLE [drug] (
   [id]          int           IDENTITY(1,1) NOT NULL,
   [name]        nvarchar(255) NULL,
   [type]        nvarchar(255) NULL,
   [description] nvarchar(255) NULL,
   CONSTRAINT [PK_drug] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [prescriptionitem] (
+  [id]             int           IDENTITY(1,1) NOT NULL,
+  [prescriptionID] int           NULL,
+  [drugID]         int           NULL,
+  [dose]           nvarchar(255) NULL,
+  [duration]       nvarchar(255) NULL,
+  [quantity]       int           NULL,
+  CONSTRAINT [PK_prescriptionitem] PRIMARY KEY ([id])
 )
