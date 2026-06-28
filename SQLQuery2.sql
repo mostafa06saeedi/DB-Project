@@ -409,3 +409,43 @@ ALTER TABLE [bed]
   ADD CONSTRAINT [FK_bed_department]
   FOREIGN KEY ([departmentID]) REFERENCES [department] ([id])
 
+ALTER TABLE [patienttransfer]
+  ADD CONSTRAINT [FK_patienttransfer_admission]
+  FOREIGN KEY ([admission]) REFERENCES [admin] ([id])
+
+ALTER TABLE [patienttransfer]
+  ADD CONSTRAINT [FK_patienttransfer_fromBed]
+  FOREIGN KEY ([fromBedID]) REFERENCES [bed] ([id])
+
+ALTER TABLE [patienttransfer]
+  ADD CONSTRAINT [FK_patienttransfer_toBed]
+  FOREIGN KEY ([toBedID]) REFERENCES [bed] ([id])
+
+ALTER TABLE [Labimagingrequest]
+  ADD CONSTRAINT [FK_Labimagingrequest_employee]
+  FOREIGN KEY ([employeeID]) REFERENCES [employee] ([id])
+
+ALTER TABLE [Labimagingrequest]
+  ADD CONSTRAINT [FK_Labimagingrequest_appointment]
+  FOREIGN KEY ([appointmentID]) REFERENCES [appointment] ([id])
+
+ALTER TABLE [Labimagingrequest]
+  ADD CONSTRAINT [FK_Labimagingrequest_addmission]
+  FOREIGN KEY ([addmissionID]) REFERENCES [addmission] ([id])
+
+ALTER TABLE [labresult]
+  ADD CONSTRAINT [FK_labresult_employee]
+  FOREIGN KEY ([reportedbyemployeeID]) REFERENCES [employee] ([id])
+
+ALTER TABLE [labresult]
+  ADD CONSTRAINT [FK_labresult_isCritical]
+  FOREIGN KEY ([isCritical]) REFERENCES [isCritical] ([id])
+
+ALTER TABLE [labresult]
+  ADD CONSTRAINT [FK_labresult_Labimagingrequest]
+  FOREIGN KEY ([LabimagingrequestID]) REFERENCES [Labimagingrequest] ([id])
+
+ALTER TABLE [labalert]
+  ADD CONSTRAINT [FK_labalaret_doctor]
+  FOREIGN KEY ([doctorID]) REFERENCES [doctor] ([employeeID])
+
