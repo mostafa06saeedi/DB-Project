@@ -40,3 +40,47 @@ CREATE TABLE [patienttransfer] (
   [toBedID]     int           NULL,
   CONSTRAINT [PK_patienttransfer] PRIMARY KEY ([id])
 )
+
+CREATE TABLE [Labimagingrequest] (
+  [id]            int           IDENTITY(1,1) NOT NULL,
+  [employeeID]    int           NULL,
+  [appointmentID] int           NULL,
+  [admissionID]   int           NULL,
+  [type]          nvarchar(255) NULL,
+  [date]          date          NULL,
+  [status]        nvarchar(255) NULL,
+  CONSTRAINT [PK_Labimagingrequest] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [isCritical] (
+  [id]               int           IDENTITY(1,1) NOT NULL,
+  [type]             nvarchar(255) NULL,
+  [referenceMin]     float         NULL,
+  [referenceMax]     float         NULL,
+  [isCritical_status] nvarchar(255) NULL,
+  [unit]             nvarchar(255) NULL,
+  CONSTRAINT [PK_isCritical] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [labresult] (
+  [id]                    int           IDENTITY(1,1) NOT NULL,
+  [reportedbyemployeeID]  int           NULL,
+  [isCritical]            int           NULL,
+  [LabimagingrequestID]   int           NULL,
+  [value]                 nvarchar(255) NULL,
+  [status]                nvarchar(255) NULL,
+  [date]                  date          NULL,
+  [description]           nvarchar(255) NULL,
+  CONSTRAINT [PK_labresult] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [labalert] (
+  [id]          int           IDENTITY(1,1) NOT NULL,
+  [doctorID]    int           NULL,
+  [labResultID] int           NULL,
+  [severity]    nvarchar(255) NULL,
+  [status]      nvarchar(255) NULL,
+  [createdAt]   date          NULL,
+  [resolvedAt]  date          NULL,
+  CONSTRAINT [PK_labalert] PRIMARY KEY ([id])
+)
