@@ -84,3 +84,11 @@ CREATE TABLE [labalert] (
   [resolvedAt]  date          NULL,
   CONSTRAINT [PK_labalert] PRIMARY KEY ([id])
 )
+
+CREATE TABLE [drug] (
+  [id]          int           IDENTITY(1,1) NOT NULL,
+  [name]        nvarchar(255) NULL,
+  [type]        nvarchar(255) NULL,
+  [description] nvarchar(255) NULL,
+  CONSTRAINT [PK_drug] PRIMARY KEY ([id])
+)
