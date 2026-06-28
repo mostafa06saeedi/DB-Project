@@ -411,7 +411,7 @@ ALTER TABLE [bed]
 
 ALTER TABLE [patienttransfer]
   ADD CONSTRAINT [FK_patienttransfer_admission]
-  FOREIGN KEY ([admission]) REFERENCES [admin] ([id])
+  FOREIGN KEY ([admissionID]) REFERENCES [admission] ([id])
 
 ALTER TABLE [patienttransfer]
   ADD CONSTRAINT [FK_patienttransfer_fromBed]
@@ -430,8 +430,8 @@ ALTER TABLE [Labimagingrequest]
   FOREIGN KEY ([appointmentID]) REFERENCES [appointment] ([id])
 
 ALTER TABLE [Labimagingrequest]
-  ADD CONSTRAINT [FK_Labimagingrequest_addmission]
-  FOREIGN KEY ([addmissionID]) REFERENCES [addmission] ([id])
+  ADD CONSTRAINT [FK_Labimagingrequest_admission]
+  FOREIGN KEY ([admissionID]) REFERENCES [admission] ([id])
 
 ALTER TABLE [labresult]
   ADD CONSTRAINT [FK_labresult_employee]
@@ -446,28 +446,29 @@ ALTER TABLE [labresult]
   FOREIGN KEY ([LabimagingrequestID]) REFERENCES [Labimagingrequest] ([id])
 
 ALTER TABLE [labalert]
-  ADD CONSTRAINT [FK_labalaret_doctor]
+  ADD CONSTRAINT [FK_labalert_doctor]
   FOREIGN KEY ([doctorID]) REFERENCES [doctor] ([employeeID])
 
 ALTER TABLE [labalert]
-  ADD CONSTRAINT [FK_labalaret_labresult]
-  FOREIGN KEY ([labresultID]) REFERENCES [labresult] ([id])
+  ADD CONSTRAINT [FK_labalert_labresult]
+  FOREIGN KEY ([labResultID]) REFERENCES [labresult] ([id])
 
 ALTER TABLE [prescription]
   ADD CONSTRAINT [FK_prescription_patient]
   FOREIGN KEY ([patientID]) REFERENCES [patient] ([nationalID])
 
 ALTER TABLE [prescription]
-  ADD CONSTRAINT [FK_prescription_emoployee]
-  FOREIGN KEY ([emoployeeID]) REFERENCES [emoployee] ([id])
+  ADD CONSTRAINT [FK_prescription_employee]
+  FOREIGN KEY ([employeeID]) REFERENCES [employee] ([id])
+
 
 ALTER TABLE [prescription]
   ADD CONSTRAINT [FK_prescription_appointment]
   FOREIGN KEY ([appointmentID]) REFERENCES [appointment] ([id])
 
 ALTER TABLE [prescription]
-  ADD CONSTRAINT [FK_prescription_addmission]
-  FOREIGN KEY ([addmissionID]) REFERENCES [addmission] ([id])
+  ADD CONSTRAINT [FK_prescription_admission]
+  FOREIGN KEY ([admissionID]) REFERENCES [admission] ([id])
 
 ALTER TABLE [prescriptionitem]
   ADD CONSTRAINT [FK_prescriptionitem_prescription]
