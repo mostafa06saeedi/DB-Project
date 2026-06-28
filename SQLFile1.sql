@@ -51,3 +51,56 @@ CREATE TABLE [department] (
   [name]        nvarchar(255) NULL,
   CONSTRAINT [PK_department] PRIMARY KEY ([id])
 )
+
+CREATE TABLE [employee] (
+  [id]				int           IDENTITY(1,1) NOT NULL,
+  [departmentID]	int           NULL,
+  [name]			nvarchar(255) NULL,
+  [contracttype]    nvarchar(255) NULL,
+  [phone]			nvarchar(255) NULL,
+  [role]			nvarchar (255)NULL,
+  [specialization]  nvarchar(255) NULL,
+  [medicalsystemID] nvarchar(255) NULL,
+  CONSTRAINT [PK_employee] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [doctor] (
+  [employeeID]		int          NOT NULL,
+  [specialization]  nvarchar(255) NULL,
+  [mecicalLicenseNum] nvarchar(255) NULL,
+  CONSTRAINT [PK_doctor] PRIMARY KEY ([employeeID])
+)
+
+CREATE TABLE [surgeon] (
+  [employeeID]		int          NOT NULL,
+  [surgicalSpecialty]  nvarchar(255) NULL,
+  CONSTRAINT [PK_surgeon] PRIMARY KEY ([employeeID])
+)
+
+CREATE TABLE [nurse] (
+  [employeeID]		int          NOT NULL,
+  [grade]  nvarchar(255) NULL,
+  CONSTRAINT [PK_nurse] PRIMARY KEY ([employeeID])
+)
+
+CREATE TABLE [adminstaff] (
+  [employeeID]		int          NOT NULL,
+  [role]  nvarchar(255) NULL,
+  CONSTRAINT [PK_adminstaff] PRIMARY KEY ([employeeID])
+)
+
+CREATE TABLE [shift] (
+  [id]          int            IDENTITY(1,1) NOT NULL,
+  [shiftDate]   date           NULL,
+  [startTime]   time		   NULL,
+  [endTime]     time		   NULL,
+  [shiftType]   nvarchar(255) NULL,
+  CONSTRAINT [PK_shift] PRIMARY KEY ([id])
+)
+
+CREATE TABLE [employeeShift] (
+  [id]          int            IDENTITY(1,1) NOT NULL,
+  [employeeID]  int            NULL,
+  [shiftID]     int            NULL,
+  CONSTRAINT [PK_employeeShift] PRIMARY KEY ([id])
+)
