@@ -139,7 +139,7 @@ AlertThreshold ──── alert ──── employee (acknowledges)
 
 Full ERD covering all 34 tables and their relationships:
 
-![ER Diagram](./ER_diagram.png)
+![ER Diagram](./docs/ER_diagram.png)
 
 ---
 
